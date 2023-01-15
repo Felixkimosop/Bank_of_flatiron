@@ -22,7 +22,19 @@ function handleDelete(e){
   e.preventDefault();
   const removed = e.target
   removed.parentElement.parentElement.remove();
-}
+
+
+  fetch('http://localhost:8001/transactions', {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      handleDelete
+    })
+
+
+})}
 
 
 

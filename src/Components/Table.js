@@ -1,16 +1,8 @@
 import React  from "react";
 
 
-function Table({list,handleDelete}){
-
+function Table({list,handleDelete}){      
     
-    
-        
-    
-
-   
-
-
 
 
     return(
