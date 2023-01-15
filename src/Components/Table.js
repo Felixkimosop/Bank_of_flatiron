@@ -1,19 +1,17 @@
-import React ,{useEffect, useState}  from "react";
+import React  from "react";
 
-function Table(){
 
-    const [data, setData] = useState({
-        date: '',
-        description: '',
-        category: '',
-        amount: ''
-      });
+function Table({list,handleDelete}){
+
     
-      useEffect(() => {
-        fetch('my-app/db.json/transactions')
-        .then(response => response.json())
-        .then(data => console.log(data))
-      },[])
+    
+        
+    
+
+   
+
+
+
 
     return(
             <div>
@@ -24,14 +22,26 @@ function Table(){
                     <th>Description</th>
                     <th>Category</th>
                     <th>Amount</th>
+                    <th>Delete</th>
                     </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-
-                        </tr>
-                    </tbody>
+                  <tbody>
+                  {
+                    list.map((item, index)=>{
+                        return(
+                            <tr key={index}>
+                                <td>{item.date}</td>
+                                <td>{item.description}</td>
+                                <td>{item.category}</td>
+                                <td>{item.amount}</td>
+                                <td><button onClick = {handleDelete}>x</button></td>                      
+                                
+                                 </tr>
+                        )
+                    })
+                }
+                  </tbody>
                 </table>
                 
                         </div>
