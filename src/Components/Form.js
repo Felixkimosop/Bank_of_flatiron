@@ -9,15 +9,18 @@ function Form({list, setList}){
      const [description, setDescription] = useState('')
      const [category, setCategory] = useState('')
      const [amount, setAmount] = useState(0)
+     
 
      function newData(e){
         e.preventDefault()
         setList([...list, {
+           
             date,
             description,
             category,
             amount
         }])
+    
         setDate('')
         setDescription('')
         setCategory('')
@@ -29,6 +32,7 @@ function Form({list, setList}){
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                
                 date,
                 description,
                 category,
@@ -40,10 +44,7 @@ function Form({list, setList}){
         
     }
 
-    function handleSearch(e){
-        const input = e.target.value
-        setList(list.filter(item => item.description.toLowerCase().includes(input)))
-    }
+   
      
      
      
@@ -53,8 +54,9 @@ function Form({list, setList}){
      
     
     return(
+        <>
         <form  className="border border-success p-2 mb-2 border-opacity-25" onSubmit={newData}>
-         <input onChange={handleSearch} className="input-group mb-3" type="text" placeholder="Search Your Transactions"/>
+        
          <div>
          <input name="date"onChange={(e)=>{setDate(e.target.value)}}  value = {date} type = "date" placeholder="date"/>
          <input name="description" onChange={(e)=>{setDescription(e.target.value)}} value= {description}type = "text" placeholder="description"/>
@@ -64,6 +66,7 @@ function Form({list, setList}){
          <button type="submit" placeholder=""  className="btn btn-secondary">Add Transaction</button>
 
         </form>
+        </>
     )
 }
 

@@ -3,38 +3,27 @@ import './App.css';
 import Header from './Components/Header';
 import Form from './Components/Form';
 import Table from './Components/Table';
+import Search from './Components/Search';
 
 function App() {
 
  const [list, setList] = useState([])
+ const [input, setInput] = useState('')
 
  useEffect(function(){
-  fetch("  http://localhost:8001/transactions")
+  fetch("  http://localhost:8001/transactions?q=" + input)
   .then(response => response.json())
       .then(data => setList(data))
 
       
-},[])
+},[input])
 
 
 
-function handleDelete(e){
-  e.preventDefault();
-  const removed = e.target
-  removed.parentElement.parentElement.remove();
-
-
-  fetch('http://localhost:8001/transactions', {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      handleDelete
-    })
-
-
-})}
+function handleSearch(e){
+  
+  setInput(e.target.value)
+}
 
 
 
@@ -44,8 +33,9 @@ function handleDelete(e){
     <div className="App">
       
      <Header />
-     <Form list = {list} setList = {setList} />
-     <Table list = {list} handleDelete={handleDelete}/>
+     < Search handleSearch = {handleSearch}/>
+     <Form list = {list}  setList = {setList} />
+     <Table list = {list}  />
     </div>
   );
 }
