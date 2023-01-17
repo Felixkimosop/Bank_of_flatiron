@@ -1,6 +1,48 @@
 {
   "transactions": [
     {
+      "id": 1,
+      "date": "2019-12-01",
+      "description": "Paycheck from Bob's Burgers",
+      "category": "Income",
+      "amount": 1000
+    },
+    {
+      "id": 2,
+      "date": "2019-12-01",
+      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
+      "category": "Food",
+      "amount": -10.55
+    },
+    {
+      "id": 3,
+      "date": "2019-12-02",
+      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
+      "category": "Food",
+      "amount": -10.55
+    },
+    {
+      "id": 4,
+      "date": "2019-12-04",
+      "description": "Sunglasses, Urban Outfitters",
+      "category": "Fashion",
+      "amount": -24.99
+    },
+    {
+      "id": 5,
+      "date": "2019-12-06",
+      "description": "Venmo, Alice Pays you for Burrito",
+      "category": "Food",
+      "amount": 8.75
+    },
+    {
+      "id": 6,
+      "date": "2019-12-06",
+      "description": "Chipotle",
+      "category": "Food",
+      "amount": -17.59
+    },
+    {
       "id": 7,
       "date": "2019-12-07",
       "description": "Birthday Check from Grandma",
@@ -57,32 +99,11 @@
       "id": 14
     },
     {
-      "date": "2023-01-03",
-      "description": "abcd",
-      "category": "xzxx",
-      "amount": "10",
-      "id": 15
-    },
-    {
-      "date": "2023-01-03",
-      "description": "Ali",
+      "date": "2023-01-12",
+      "description": "zxzxx",
       "category": "xx",
-      "amount": "29",
-      "id": 16
-    },
-    {
-      "date": "2023-01-03",
-      "description": "aaaa",
-      "category": "xzxx",
-      "amount": "12",
-      "id": 17
-    },
-    {
-      "date": "2023-01-04",
-      "description": "ADSSD",
-      "category": "DDD",
-      "amount": "40",
-      "id": 18
+      "amount": "20",
+      "id": 15
     }
   ]
 }
